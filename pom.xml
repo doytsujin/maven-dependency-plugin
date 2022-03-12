@@ -352,35 +352,6 @@ under the License.
           <artifactId>taglist-maven-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-        <plugin>
-          <groupId>org.apache.rat</groupId>
-          <artifactId>apache-rat-plugin</artifactId>
-          <configuration>
-            <excludes combine.children="append">
-              <!--
-                These files contain results for integration tests which can't contain license header
-                otherwise the IT's will fail.
-              -->
-              <exclude>src/it/projects/tree/expected.txt</exclude>
-              <exclude>src/it/projects/tree-includes/expected.txt</exclude>
-              <exclude>src/it/projects/tree-multimodule/expected.txt</exclude>
-              <exclude>src/it/projects/tree-multimodule/module-a/expected.txt</exclude>
-              <exclude>src/it/projects/tree-multimodule/module-b/expected.txt</exclude>
-              <exclude>src/it/projects/tree-verbose-multimodule/expected.txt</exclude>
-              <exclude>src/it/projects/tree-verbose-multimodule/module-a/expected.txt</exclude>
-              <exclude>src/it/projects/tree-verbose-multimodule/module-b/expected.txt</exclude>
-              <exclude>src/it/projects/tree-verbose/expected*.txt</exclude>
-              <exclude>src/it/projects/tree-verbose-small/expected.txt</exclude>
-              <!-- These files contain expected versions for unit tests -->
-              <exclude>src/test/resources/unit/verbose-serializer-test/*</exclude>
-              <!--
-                These files contain real repository artifacts.
-              -->
-              <exclude>src/test/resources/unit/get-test/repository/test/test/1.0/test-1.0.jar.sha1</exclude>
-              <exclude>src/test/resources/unit/get-test/repository/test/test/1.0/test-1.0.pom.sha1</exclude>
-            </excludes>
-          </configuration>
-        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
