@@ -28,5 +28,9 @@ jobs:
       run: git clean -f -X
     - name: Remove ignored and non-ignored files
       run: git clean -f -x
+    - name: Remove ignored and non-ignored files
+      run: git clean -f -x
+    - name: Maven clean licenses
+      run: mvn clean validate -Pcheck-licenses
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -DskipTests -Drat.skip=true -B package --file pom.xml
