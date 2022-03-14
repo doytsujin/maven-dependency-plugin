@@ -22,15 +22,5 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Remove temporary directories
-      run: git clean -f -d
-    - name: Remove ignored directories
-      run: git clean -f -X
-    - name: Remove ignored and non-ignored files
-      run: git clean -f -x
-    - name: Remove ignored and non-ignored files
-      run: git clean -f -x
-    - name: Maven clean licenses
-      run: mvn clean validate -Pcheck-licenses
     - name: Build with Maven
-      run: mvn -DskipTests -Drat.skip=true -B package --file pom.xml
+      run: mvn package
